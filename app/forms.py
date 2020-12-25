@@ -8,3 +8,11 @@ class LoginForm(FlaskForm):
   employee_number = StringField("Employee Number", [DataRequired()])
   password = PasswordField("Password", [DataRequired()])
   submit = SubmitField("Login")
+
+class MenuItemAssignmentForm(FlaskForm):
+  menu_item_ids = SelectMultipleField("Menu items", coerce=int)
+
+class TableAssignmentForm(FlaskForm):
+  assign = SubmitField("Assign")
+  employees = SelectField("Servers", [DataRequired()], coerce=int)
+  tables = SelectField("Tables", [DataRequired()], coerce=int)
